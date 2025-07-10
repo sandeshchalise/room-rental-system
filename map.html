@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        /* Map container styling */
+        #map {
+            height: 400px; /* Adjust height as needed */
+            width: 100%;
+            display: none; /* Hidden initially */
+            margin-top: 10px;
+        }
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        /* Container for centering content */
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>See the location easily</h1>
+        <button id="showMapBtn">Show Map</button>
+        <!-- Map container -->
+        <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Map initialization script -->
+    <script>
+        let map = null; // Map instance
+        const mapContainer = document.getElementById('map');
+        const showMapBtn = document.getElementById('showMapBtn');
+
+        // Function to initialize and show the map
+        function initializeMap() {
+            if (map === null) {
+                // Initialize map only once
+                map = L.map('map').setView([28.0548, 81.6145], 13);
+
+                // Add OpenStreetMap tiles
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+ // Add marker with popup
+                L.marker([28.0548, 81.6145]).addTo(map)
+                    .bindPopup('<b>Room Available</b><br><a href="index.html" target="_blank">View Details</a>')
+                    .openPopup();
+                     L.marker([28.0648, 81.6145]).addTo(map)
+                    .bindPopup('<b>Room Available</b><br><a href="index.html" target="_blank">View Details</a>')
+                    .openPopup();
+            }
+
+           
+
+
+            // Show map container
+            mapContainer.style.display = 'block';
+            // Ensure map renders correctly
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 0);
+        }
+        
+        // Add click event to button
+        showMapBtn.addEventListener('click', initializeMap);
+           
+    </script>
+</body>
+</html>

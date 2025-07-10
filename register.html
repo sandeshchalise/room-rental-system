@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head><title>Register</title><link rel="stylesheet" href="css/style.css">
+<style>
+   body{
+      background-image: url("images/2.jpg");
+      background-size: cover;      
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  width: 100%;
+       }
+       p{
+        font-size: 19px;
+       }
+</style></head><body>
+<form action="register.php" method="POST" class="form-card">
+<h2>Register</h2>
+<input type="text" name="username" placeholder="Username" required>
+<input type="email" name="email" placeholder="Email" required>
+<input type="password" name="password" placeholder="Password" required>
+<select name="role"><option value="user">User</option><option value="owner">Owner</option></select>
+<button type="submit">Register</button>
+<p>Already registered? <a href="login.html">Login</a></p>
+</form></body></html>

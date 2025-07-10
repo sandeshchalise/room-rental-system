@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><title>Add Listing</title><link rel="stylesheet" href="css/style.css">
+<style>
+    body{
+        background-image: url("images/2.jpg");
+        background-size: cover;     
+             background-repeat: no-repeat;
+             background-position: center center;
+             height: 100vh;
+             width: 100%;
+    }
+</style></head><body>
+<form action="add_listing.php" method="POST" class="form-card">
+<h2>Add New Listing</h2>
+<input type="text" name="title" placeholder="Room Title" required>
+<textarea name="description" placeholder="Room Description" required></textarea>
+<input type="text" name="location" placeholder="Location" required>
+<input type="number" name="price" placeholder="Price" required>
+<input type="image"  name="image" placeholder="images" required>
+<button type="submit">Add Listing</button>
+</form></body></html>

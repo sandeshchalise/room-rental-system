@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Rooms</title>
+    <link rel="stylesheet" href="css/style.css">
+<style>
+    body{
+        background-image: url("images/2.jpg");
+        background-size: cover;     
+             background-repeat: no-repeat;
+             background-position: center center;
+             height: 100vh;
+             width: 100%;
+    }
+    form{
+        text-align: center;
+    }
+      a{display: block;
+        text-align: center;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  color: black;
+
+
+    }
+
+</style>
+</head>
+
+<body>
+    <a href='availableroom.html'>View all rooms</a>
+<div class="form-card">
+<h2>Search Rooms</h2>
+<form id="filterForm">
+<input type="text" id="searchlocation" placeholder="Location">
+ <a href='map.html'>view map</a> 
+<input type="number" id="maxPrice" placeholder="Max Price">
+<button type="submit">Search </button>
+</form><div id="listingResults"></div>
+</div>
+<script src="js/script.js"></script>
+</body></html>
+
+</html>
